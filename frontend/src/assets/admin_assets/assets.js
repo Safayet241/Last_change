@@ -14,4 +14,4 @@ export const assets ={
     parcel_icon
 }
 
-export const url = 'https://project-backend-jd70.onrender.com'
+export const url = 'https://last-change-1-5hri.onrender.com'
