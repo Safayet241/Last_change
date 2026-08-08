@@ -59,7 +59,7 @@ const AddFood = () => {
 
 
             const response = await fetch(
-                "http://localhost:4000/api/food/add",
+                "https://last-change-backend.onrender.com/api/food/add",
                 {
                     method: "POST",
 
