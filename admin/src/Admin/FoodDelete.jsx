@@ -15,7 +15,7 @@ const FoodDelete = () => {
         try {
 
             const response = await fetch(
-                "http://localhost:4000/api/food/list"
+                "https://last-change-backend.onrender.com/api/food/list"
             );
 
             const result = await response.json();
@@ -62,7 +62,7 @@ const FoodDelete = () => {
 
 
             const response = await fetch(
-                "http://localhost:4000/api/food/remove",
+                "https://last-change-backend.onrender.com/api/food/remove",
                 {
                     method: "POST",
 
@@ -137,7 +137,7 @@ const FoodDelete = () => {
                     >
 
                         <img
-                            src={`http://localhost:4000/images/${item.image}`}
+                            src={`https://last-change-backend.onrender.com/images/${item.image}`}
                             alt={item.name}
                         />
 
