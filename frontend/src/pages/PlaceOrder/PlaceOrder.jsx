@@ -119,7 +119,7 @@ const PlaceOrder = () => {
 
 
             const response = await fetch(
-                "http://localhost:4000/api/order/place",
+                "https://last-change-backend.onrender.com/api/order/place",
                 {
                     method: "POST",
 
