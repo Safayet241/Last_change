@@ -11,7 +11,7 @@ const StoreContextProvider = (props) => {
     const fetchFoodList = async () => {
         try {
             const response = await fetch(
-                "https://food-delivery-system-backend-sui2.onrender.com/"
+                "https://last-change-backend.onrender.com"
             );
 
             const result = await response.json();
