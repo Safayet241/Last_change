@@ -1,0 +1,30 @@
+ 
+.admin-panel {
+    min-height: 70vh;
+    padding: 50px;
+}
+
+.admin-panel h1 {
+    margin-bottom: 30px;
+}
+
+.admin-panel-menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-panel-menu a,
+.admin-panel-menu button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    background: tomato;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+ 
+
+ 

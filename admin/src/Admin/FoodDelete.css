@@ -1,0 +1,84 @@
+.food-delete {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.food-delete h2 {
+    margin-bottom: 25px;
+}
+
+.food-delete-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.food-delete-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.food-delete-item img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.food-delete-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.food-delete-info h3 {
+    margin: 0;
+}
+
+.food-delete-info p {
+    margin: 0;
+    color: #666;
+}
+
+.food-delete-info span {
+    font-weight: bold;
+}
+
+.food-delete-info small {
+    color: #888;
+}
+
+.food-delete-item button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #e74c3c;
+    color: white;
+    cursor: pointer;
+}
+
+.food-delete-item button:hover {
+    opacity: 0.8;
+}
+
+.admin-back-button {
+    margin: 20px 0;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.admin-back-button:hover {
+    background: #555;
+}

@@ -1,0 +1,50 @@
+ 
+.admin-navbar {
+    width: 100%;
+    padding: 15px 30px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.admin-navbar h2 {
+    margin: 0;
+    color: tomato;
+    font-size: 22px;
+}
+
+.admin-navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.admin-navbar-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.admin-navbar-links a:hover {
+    color: tomato;
+}
+
+@media (max-width: 800px) {
+
+    .admin-navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .admin-navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+}
+ 

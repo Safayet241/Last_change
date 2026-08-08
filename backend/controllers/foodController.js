@@ -1,0 +1,84 @@
+ 
+import foodModel from "../models/foodModel.js";
+
+// Add food item
+const addFood = async (req, res) => {
+    try {
+        const food = new foodModel({
+            name: req.body.name,
+            description: req.body.description,
+            price: Number(req.body.price),
+            category: req.body.category,
+            image: req.file.filename
+        });
+
+        await food.save();
+
+        res.json({
+            success: true,
+            message: "Food Added Successfully"
+        });
+
+    } catch (error) {
+        console.log(error);
+
+        res.json({
+            success: false,
+            message: "Error adding food"
+        });
+    }
+};
+
+
+// Get all food
+const listFood = async (req, res) => {
+    try {
+        const foods = await foodModel.find({});
+
+        res.json({
+            success: true,
+            data: foods
+        });
+
+    } catch (error) {
+        console.log(error);
+
+        res.json({
+            success: false,
+            message: "Error fetching food"
+        });
+    }
+};
+
+
+// Delete food
+const removeFood = async (req, res) => {
+    try {
+        const food = await foodModel.findById(req.body.id);
+
+        if (!food) {
+            return res.json({
+                success: false,
+                message: "Food not found"
+            });
+        }
+
+        await foodModel.findByIdAndDelete(req.body.id);
+
+        res.json({
+            success: true,
+            message: "Food deleted successfully"
+        });
+
+    } catch (error) {
+        console.log(error);
+
+        res.json({
+            success: false,
+            message: "Error deleting food"
+        });
+    }
+};
+
+
+export { addFood, listFood, removeFood };
