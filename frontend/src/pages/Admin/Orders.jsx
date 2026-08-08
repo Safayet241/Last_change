@@ -31,7 +31,7 @@ const Orders = () => {
 
 
             const response = await fetch(
-                "http://localhost:4000/api/order/list",
+                "https://last-change-backend.onrender.com/api/order/list",
                 {
                     method: "GET",
 
@@ -104,7 +104,7 @@ const Orders = () => {
 
 
             const response = await fetch(
-                "http://localhost:4000/api/order/status",
+                "https://last-change-backend.onrender.com/api/order/status",
                 {
                     method: "POST",
 
@@ -317,7 +317,7 @@ const Orders = () => {
 
 
                                         <img
-                                            src={`http://localhost:4000/images/${item.image}`}
+                                            src={`https://last-change-backend.onrender.com/images/${item.image}`}
                                             alt={item.name}
                                         />
 
