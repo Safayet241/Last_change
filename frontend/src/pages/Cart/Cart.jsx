@@ -41,7 +41,7 @@ function Cart() {
                                 <div className='cart-items-title cart-items-item'>
 
                                     <img
-                                        src={`http://localhost:4000/images/${item.image}`}
+                                        src={`https://last-change-backend.onrender.com/${item.image}`}
                                         alt={item.name}
                                     />
 
