@@ -1,45 +1,42 @@
  
-import React, { useState } from 'react'
-import './LoginPopup.css'
-import { assets } from '../../assets/frontend_assets/assets'
+import React, { useState } from "react";
+import "./LoginPopup.css";
+import { assets } from "../../assets/frontend_assets/assets";
 
 const LoginPopup = ({ setShowLogin }) => {
 
-    const [currState, setCurrState] = useState("Login")
+    const [currState, setCurrState] = useState("Login");
 
     const [data, setData] = useState({
         name: "",
         email: "",
         password: ""
-    })
-
+    });
 
     const onChangeHandler = (event) => {
 
-        const { name, value } = event.target
+        const { name, value } = event.target;
 
-        setData(prev => ({
+        setData((prev) => ({
             ...prev,
             [name]: value
-        }))
+        }));
 
-    }
-
+    };
 
     const onSubmitHandler = async (event) => {
 
-        event.preventDefault()
+        event.preventDefault();
 
         try {
 
             const endpoint =
                 currState === "Login"
                     ? "login"
-                    : "register"
-
+                    : "register";
 
             const response = await fetch(
-                `https://last-change-backend.onrender.com/${endpoint}`,
+                `https://last-change-backend.onrender.com/api/user/${endpoint}`,
                 {
                     method: "POST",
 
@@ -49,13 +46,11 @@ const LoginPopup = ({ setShowLogin }) => {
 
                     body: JSON.stringify(data)
                 }
-            )
+            );
 
+            const result = await response.json();
 
-            const result = await response.json()
-
-            console.log("API RESULT:", result)
-
+            console.log("API RESULT:", result);
 
             if (result.success) {
 
@@ -63,47 +58,43 @@ const LoginPopup = ({ setShowLogin }) => {
                     currState === "Login"
                         ? "Login Successful"
                         : "Registration Successful"
-                )
-
+                );
 
                 if (result.token) {
 
                     localStorage.setItem(
                         "token",
                         result.token
-                    )
+                    );
 
                 }
-
 
                 if (result.user) {
 
                     localStorage.setItem(
                         "user",
                         JSON.stringify(result.user)
-                    )
+                    );
 
                 }
 
-
-                setShowLogin(false)
+                setShowLogin(false);
 
             } else {
 
-                alert(result.message)
+                alert(result.message || "Authentication failed");
 
             }
 
         } catch (error) {
 
-            console.log("AUTH ERROR:", error)
+            console.log("AUTH ERROR:", error);
 
-            alert("Something went wrong")
+            alert("Something went wrong");
 
         }
 
-    }
-
+    };
 
     return (
 
@@ -113,7 +104,6 @@ const LoginPopup = ({ setShowLogin }) => {
                 className="login-popup-container"
                 onSubmit={onSubmitHandler}
             >
-
 
                 {/* Title */}
 
@@ -147,7 +137,6 @@ const LoginPopup = ({ setShowLogin }) => {
 
                     )}
 
-
                     <input
                         name="email"
                         type="email"
@@ -156,7 +145,6 @@ const LoginPopup = ({ setShowLogin }) => {
                         onChange={onChangeHandler}
                         required
                     />
-
 
                     <input
                         name="password"
@@ -240,13 +228,8 @@ const LoginPopup = ({ setShowLogin }) => {
 
         </div>
 
-    )
-}
+    );
+};
 
-export default LoginPopup
+export default LoginPopup;
  
-
- 
-
-
-
